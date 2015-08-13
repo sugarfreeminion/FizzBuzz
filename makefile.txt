@@ -1,0 +1,14 @@
+OBJS = FizzBuzz.o
+CC = g++
+DEBUG = -g
+CFLAGS = -Wall -c $(DEBUG)
+LFLAGS = -Wall $(DEBUG)
+
+FizzBuzz : $(OBJS)
+		   $(CC) $(LFLAGS) $(OBJS) -o FizzBuzz
+
+FizzBuzz.o : FizzBuzz.cpp
+			 $(CC) $(CFLAGS) FizzBuzz.cpp
+			 
+clean:
+	\rm *.o *~ FizzBuzz
